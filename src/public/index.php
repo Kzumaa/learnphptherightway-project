@@ -12,6 +12,9 @@
 //     }
 // );
 
+use App\Enums\Status;
+use App\PaymentGateway\Paddle\Transaction;
+
 require __DIR__ . '/../vendor/autoload.php';
 
 // spl_autoload_register(
@@ -20,14 +23,10 @@ require __DIR__ . '/../vendor/autoload.php';
 //     }
 // , true);
 
-use App\PaymentGateway\Paddle\Transaction;
+$transaction = new Transaction();
 
-$paddleTransaction = new Transaction();
+$transaction->setStatus(Status::PAID);
 
-$id = new \Ramsey\Uuid\UuidFactory();
-
-echo $id->uuid4();
-
-var_dump($paddleTransaction);
+var_dump($transaction);
 
 // And some Destruct method's usecase
