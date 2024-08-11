@@ -12,21 +12,10 @@
 //     }
 // );
 
-use App\Enums\Status;
 use App\PaymentGateway\Paddle\Transaction;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-// spl_autoload_register(
-//     function ($class) {
-//         var_dump($class);
-//     }
-// , true);
+$transaciton = new Transaction(20, 'Transaction 1');
 
-$transaction = new Transaction();
-
-$transaction->setStatus(Status::PAID);
-
-var_dump($transaction);
-
-// And some Destruct method's usecase
+var_dump($transaciton::getCount());
