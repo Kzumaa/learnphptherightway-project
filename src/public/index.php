@@ -16,6 +16,4 @@ use App\PaymentGateway\Paddle\Transaction;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$transaciton = new Transaction(20, 'Transaction 1');
-
-var_dump($transaciton::getCount());
+$transaciton = new Transaction(20);

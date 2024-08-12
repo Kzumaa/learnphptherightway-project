@@ -8,15 +8,12 @@ use App\Enums\Status;
 
 class Transaction 
 {
-
-    private static int $count = 0;
-
+    private float $amount;
 
     public function __construct(
-        public float $amount,
-        public string $description
+        float $amount,
     ) {
-    self::$count++;   
+        $this->amount = $amount;
     }
 
     public function progress () 
@@ -24,8 +21,4 @@ class Transaction
         echo 'Processing paddle transaction...';
     }
 
-    public static function getCount () : int
-    {
-        return self::$count;
-    }
 }
